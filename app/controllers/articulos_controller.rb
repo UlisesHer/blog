@@ -1,5 +1,7 @@
 class ArticulosController < ApplicationController
 
+  before_action :authenticate_user!, only: [:edit, :update, :new, :create, :destroy]
+
   def index
     @articulos = Articulo.order("created_at desc")
   end

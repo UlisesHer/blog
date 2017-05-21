@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  get 'bienvenido/index'
 
-  
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
- resources :articulos
+	devise_for :users
 
- root 'bienvenido#index'
+	root 'bienvenido#index'
+
+	get 'bienvenido/index'
+
+	resources :articulos
+
+	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
