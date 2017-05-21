@@ -1,0 +1,13 @@
+<p>
+  <strong>Titular:</strong>
+  <%= @articulo.titular %>
+</p>
+ 
+<p>
+  <strong>Contenido:</strong>
+  <%= @articulo.contenido %>
+</p>
+
+<%= link_to 'Volver', articulos_path %>
+	<br />
+<%= link_to 'Editar', edit_articulo_path(@articulo) %>
