@@ -1,32 +1,40 @@
 
-<%= link_to 'Nuevo Artículo', new_articulo_path %>
+<%= link_to 'Nuevo Artículo', new_articulo_path, class: "btn btn-success" %>
 
 <h1>Listando Artículos</h1>
- 
-<table>
-  <tr>
-    <th>Titular</th>
-    <th>Conenido</th>
-    <th></th>
-    <% if user_signed_in? %>
-      <th></th>
-      <th></th>
-    <% end %>
-  </tr>
- 
-  <% @articulos.each do |articulo| %>
-    <tr>
-      <td><%= articulo.titular %></td>
-      <td><%= articulo.contenido %></td>
-      <td><%= link_to 'Ver', articulo_path(articulo) %></td>
-      <% if user_signed_in? %>
-        <td><%= link_to 'Editar', edit_articulo_path(articulo) %></td>
 
-        <td><%= link_to 'Borrar', articulo_path(articulo),
-              method: :delete,
-              data: { confirm: '¿Estás seguro?' } %></td>
+<div class="row">
+
+  <div class="col-md-6">
+ 
+    <table class="table table-hover">
+      <tr>
+        <th>Titular</th>
+        <th>Conenido</th>
+        <th></th>
+        <% if user_signed_in? %>
+          <th></th>
+          <th></th>
+        <% end %>
+      </tr>
+     
+      <% @articulos.each do |articulo| %>
+        <tr>
+          <td><%= articulo.titular %></td>
+          <td><%= articulo.contenido %></td>
+          <td><%= link_to 'Ver', articulo_path(articulo) %></td>
+          <% if user_signed_in? %>
+            <td><%= link_to 'Editar', edit_articulo_path(articulo) %></td>
+
+            <td><%= link_to 'Borrar', articulo_path(articulo),
+                  method: :delete,
+                  data: { confirm: '¿Estás seguro?' } %></td>
+          <% end %>
+                  
+        </tr>
       <% end %>
-              
-    </tr>
-  <% end %>
-</table>
+    </table>
+
+  </div>
+
+</div>
