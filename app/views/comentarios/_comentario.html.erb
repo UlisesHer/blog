@@ -1,0 +1,15 @@
+<p>
+  <strong>Comentarista:</strong>
+  <%= comentario.comentarista %>
+</p>
+ 
+<p>
+  <strong>Comentario:</strong>
+  <%= comentario.contenido %>
+</p>
+
+<p>
+	<%= link_to 'Borrar Comentario', [comentario.articulo, comentario],
+						method: :delete,
+						dta: { confirm: 'Estas seguro que quieres eliminarlo?' } %>
+</p>

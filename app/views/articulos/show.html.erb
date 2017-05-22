@@ -3,38 +3,20 @@
   <%= @articulo.titular %>
 </p>
  
+ 
 <p>
   <strong>Contenido:</strong>
-  <%= @articulo.contenido %>
+  <%= @articulo.contenido%>
 </p>
 
 
 <h2>Comentarios</h2>
-<% @articulo.comentarios.each do |comentario| %>
-  <p>
-    <strong>Comentarista:</strong>
-    <%= comentario.comentarista %>
-  </p>
- 
-  <p>
-    <strong>Comentario:</strong>
-    <%= comentario.contenido %>
-  </p>
-<% end %>
+<%= render @articulo.comentarios %>
 
-	<h1>Añadir comentario:</h1>
-	<%= form_for ([@articulo, @articulo.comentarios.build]) do |f| %>
-		<p>
-			<%= f.label :comentarista %><br>
-			<%= f.text_field :comentarista %>
-		</p>
-		<p>
-			<%= f.label :contenido %><br>
-			<%= f.text_field :contenido %>
-		</p>
-		<p>
-			<%= f.submit 'Guardar Comentarios' %>
-		</p>
-	<% end %>
+
+<h1>Añadir comentario:</h1>
+<%= render 'comentarios/form' %>
+
+
 <%= link_to 'Editar Articulo', edit_articulo_path(@articulo) %>
 <%= link_to 'Volver a Articulo', edit_articulo_path %>
