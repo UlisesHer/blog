@@ -22,13 +22,13 @@
         <tr>
           <td><%= articulo.titular %></td>
           <td><%= articulo.contenido %></td>
-          <td><%= link_to 'Ver', articulo_path(articulo) %></td>
+          <td><%= link_to 'Ver', articulo_path(articulo), class:"btn btn-primary" %></td>
           <% if user_signed_in? %>
-            <td><%= link_to 'Editar', edit_articulo_path(articulo) %></td>
+            <td><%= link_to 'Editar', edit_articulo_path(articulo), class:"btn btn-success" %></td>
 
             <td><%= link_to 'Borrar', articulo_path(articulo),
                   method: :delete,
-                  data: { confirm: '¿Estás seguro?' } %></td>
+                  data: { confirm: '¿Estás seguro?' }, class:"btn btn-danger"  %></td>
           <% end %>
                   
         </tr>

@@ -3,7 +3,7 @@
   <%= @articulo.titular %>
 </p>
  
- 
+
 <p>
   <strong>Contenido:</strong>
   <%= @articulo.contenido%>
@@ -18,5 +18,8 @@
 <%= render 'comentarios/form' %>
 
 
-<%= link_to 'Editar Articulo', edit_articulo_path(@articulo) %>
-<%= link_to 'Volver a Articulo', edit_articulo_path %>
+<%= link_to 'Editar Articulo', edit_articulo_path(@articulo), class:"btn btn-success" %>
+
+<p>
+<%= link_to 'Volver a Articulo', edit_articulo_path, class:"btn btn-info"%>
+</p>
